@@ -1,6 +1,6 @@
 context:
   name: tiledbsoma
-  version: 1.15.3
+  version: "1.15.4"
 
 recipe:
   name: ${{ name|lower }}
@@ -8,7 +8,7 @@ recipe:
 
 source:
   url: https://github.com/single-cell-data/TileDB-SOMA/archive/refs/tags/${{ version }}.zip
-  sha256: 1c9b60b14c900e252c30586fcadaeddd455d58df624112ecea62eef24212dc61
+  sha256: 64a501f92372aef9f87a4dd5776643696a08a376959564dd6710033c0bba8b81
   patches:
     # NOTE:
     # - fix failing includes
@@ -16,7 +16,7 @@ source:
     - fix-lib-build.patch
 
 build:
-  number: 1
+  number: 0
   skip: win
 
 outputs:
