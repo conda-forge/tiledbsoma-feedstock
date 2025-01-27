@@ -4,7 +4,7 @@
 
 [project]
 name = "tiledbsoma-feedstock"
-version = "3.45.3"
+version = "3.45.4"
 description = "Pixi configuration for conda-forge/tiledbsoma-feedstock"
 authors = ["@conda-forge/tiledbsoma"]
 channels = ["conda-forge"]
