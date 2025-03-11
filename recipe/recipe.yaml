@@ -9,11 +9,6 @@ recipe:
 source:
   url: https://github.com/single-cell-data/TileDB-SOMA/archive/refs/tags/${{ version }}.zip
   sha256: d02f88ad18afc18e5cace32fe916fc03ff781d18fe7a477fe5f7e5cd5bf76a53
-  patches:
-    # NOTE:
-    # - fix failing includes
-    # - fix failing linking configuration for tiledbsoma-cli and spdlog
-    - fix-lib-build.patch
 
 build:
   number: 0
@@ -39,6 +34,7 @@ outputs:
           -DTILEDBSOMA_ENABLE_TESTING=OFF \
           -DTILEDBSOMA_ENABLE_WERROR=OFF \
           -DTileDB_DIR="${PREFIX}" \
+          -DSPDLOG_LINK_SHARED=ON \
           -B build/ \
           -S $SRC_DIR/libtiledbsoma
 
