@@ -94,7 +94,6 @@ outputs:
             - tiledbsoma/soma/soma_point_cloud_dataframe.h
             - tiledbsoma/soma/soma_scene.h
             - tiledbsoma/soma/soma_sparse_ndarray.h
-            - tiledbsoma/soma/span/span.hpp
             - tiledbsoma/tiledbsoma
             - tiledbsoma/tiledbsoma_export.h
             - tiledbsoma/utils/arrow_adapter.h
