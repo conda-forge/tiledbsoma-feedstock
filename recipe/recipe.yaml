@@ -156,7 +156,7 @@ outputs:
         - pyarrow
         - scanpy >=1.9.2
         - scipy
-        - somacore ==1.0.26
+        - somacore ==1.0.28
         - typing_extensions
 
     tests:
