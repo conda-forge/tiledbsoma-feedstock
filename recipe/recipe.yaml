@@ -24,6 +24,9 @@ outputs:
 
     build:
       script: |
+        # Clear default compiler flags
+        export CXXFLAGS=${CXXFLAGS//"-fvisibility-inlines-hidden"/}
+
         # Configure
         cmake -G Ninja \
           ${CMAKE_ARGS} \
@@ -113,6 +116,9 @@ outputs:
 
     build:
       script: |
+        # Clear default compiler flags
+        export CXXFLAGS=${CXXFLAGS//"-fvisibility-inlines-hidden"/}
+
         # Set the version
         echo "${PKG_VERSION}" > ${SRC_DIR}/apis/python/RELEASE-VERSION
 
