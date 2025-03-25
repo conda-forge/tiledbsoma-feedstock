@@ -1,0 +1,15 @@
+diff --git a/libtiledbsoma/src/CMakeLists.txt b/libtiledbsoma/src/CMakeLists.txt
+index 3f659f3a..01f6189a 100644
+--- a/libtiledbsoma/src/CMakeLists.txt
++++ b/libtiledbsoma/src/CMakeLists.txt
+@@ -343,6 +343,10 @@ if(TILEDBSOMA_BUILD_CLI)
+     ${TILEDB_SOMA_EXPORT_HEADER_DIR}
+     ${pybind11_INCLUDE_DIRS}
+   )
++
++  # Ensure proper visibility settings
++  set(CMAKE_CXX_VISIBILITY_PRESET hidden)
++
+ endif()
+ 
+ # ###########################################################
