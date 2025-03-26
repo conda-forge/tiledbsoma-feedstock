@@ -72,6 +72,9 @@ outputs:
     tests:
       - script:
           - tdbsoma
+        requirements:
+          run:
+            - libsanitizer
       - package_contents:
           files:
             - lib/cmake/tiledbsoma/TileDBSomaConfig.cmake
