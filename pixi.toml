@@ -3,10 +3,10 @@
 # -*- mode: toml -*-
 
 [project]
-name = "cf-tiledbsoma-feedstock"
+name = "tiledbsoma-feedstock"
 version = "3.47.0"
-description = "Pixi configuration for conda-forge/cf-tiledbsoma-feedstock"
-authors = ["@conda-forge/cf-tiledbsoma"]
+description = "Pixi configuration for conda-forge/tiledbsoma-feedstock"
+authors = ["@conda-forge/tiledbsoma"]
 channels = ["conda-forge"]
 platforms = ["linux-64", "osx-64", "win-64"]
 
