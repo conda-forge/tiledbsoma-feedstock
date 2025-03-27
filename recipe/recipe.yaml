@@ -68,6 +68,12 @@ outputs:
     tests:
       - script:
           - tdbsoma
+          - if: linux
+            then:
+              - ldd $PREFIX/lib/libtiledbsoma.so | grep -q libspdlog
+          - if: osx
+            then:
+              - otool -L $PREFIX/lib/libtiledbsoma.dylib | grep -q libspdlog
       - package_contents:
           files:
             - lib/cmake/tiledbsoma/TileDBSomaConfig.cmake
