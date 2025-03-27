@@ -68,10 +68,10 @@ outputs:
     tests:
       - script:
           - tdbsoma
-          - if: linux
+          - if: linux and build_platform == target_platform
             then:
               - ldd $PREFIX/lib/libtiledbsoma.so | grep -q libspdlog
-          - if: osx
+          - if: osx and build_platform == target_platform
             then:
               - otool -L $PREFIX/lib/libtiledbsoma.dylib | grep -q libspdlog
       - package_contents:
