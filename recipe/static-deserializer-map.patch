@@ -3,9 +3,9 @@ index dac2b1b6..12923d8c 100644
 --- a/libtiledbsoma/src/soma/soma_column.cc
 +++ b/libtiledbsoma/src/soma/soma_column.cc
 @@ -20,12 +20,6 @@
- 
+
  namespace tiledbsoma {
- 
+
 -std::map<uint32_t, SOMAColumn::Factory> SOMAColumn::deserialiser_map = {
 -    {soma_column_datatype_t::SOMA_COLUMN_ATTRIBUTE, SOMAAttribute::deserialize},
 -    {soma_column_datatype_t::SOMA_COLUMN_DIMENSION, SOMADimension::deserialize},
@@ -18,7 +18,7 @@ index dac2b1b6..12923d8c 100644
 @@ -61,7 +55,26 @@ std::vector<std::shared_ptr<SOMAColumn>> SOMAColumn::deserialize(
              auto type = column[TILEDB_SOMA_SCHEMA_COL_TYPE_KEY]
                              .template get<uint32_t>();
- 
+
 -            auto col = deserialiser_map[type](column, ctx, array, metadata);
 +            std::shared_ptr<SOMAColumn> col;
 +
@@ -36,11 +36,11 @@ index dac2b1b6..12923d8c 100644
 +                        column, ctx, array, metadata);
 +                    break;
 +                default:
-+                    throw TileDBSOMAError(fmt::format(
++                    throw TileDBSOMAError(std::format(
 +                        "[SOMAColumn][deserialize] Unknown column type {}",
 +                        type));
 +            }
- 
+
              if (col) {
                  // Deserialized column can be null in case the array is modified
 diff --git a/libtiledbsoma/src/soma/soma_column.h b/libtiledbsoma/src/soma/soma_column.h
@@ -49,7 +49,7 @@ index 83b2ac9c..53662543 100644
 +++ b/libtiledbsoma/src/soma/soma_column.h
 @@ -516,15 +516,6 @@ class SOMAColumn {
          const SOMAContext& ctx, Array& array) const = 0;
- 
+
      virtual std::any _core_current_domain_slot(NDRectangle& ndrect) const = 0;
 -
 -   private:
@@ -61,5 +61,5 @@ index 83b2ac9c..53662543 100644
 -
 -    static std::map<uint32_t, Factory> deserialiser_map;
  };
- 
+
  template <>
