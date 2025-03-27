@@ -28,12 +28,6 @@ outputs:
         # Clear default compiler flags
         export CXXFLAGS=${CXXFLAGS//"-fvisibility-inlines-hidden"/}
 
-        # Debug
-        export CXXFLAGS="$CXXFLAGS -fsanitize=address -g"
-        export CFLAGS="$CFLAGS -fsanitize=address -g"
-        echo CXXFLAGS=$CXXFLAGS
-        echo CFLAGS=$CFLAGS
-
         # Configure
         cmake -G Ninja \
           ${CMAKE_ARGS} \
@@ -74,9 +68,6 @@ outputs:
     tests:
       - script:
           - tdbsoma
-        requirements:
-          run:
-            - libsanitizer
       - package_contents:
           files:
             - lib/cmake/tiledbsoma/TileDBSomaConfig.cmake
