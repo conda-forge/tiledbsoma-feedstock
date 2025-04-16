@@ -201,6 +201,7 @@ about:
 extra:
   feedstock-name: tiledbsoma
   recipe-maintainers:
+    - jp-dark
     - hadim
     - jdblischak
     - johnkerl
