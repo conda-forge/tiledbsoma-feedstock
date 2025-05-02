@@ -50,7 +50,7 @@ outputs:
       build:
         - ${{ compiler('cxx') }}
         - ${{ stdlib("c") }}
-        - cmake >=3.21
+        - cmake >=3.21,<4
         - ninja
         - pkg-config
       host:
@@ -141,7 +141,7 @@ outputs:
 
         - ${{ compiler('cxx') }}
         - ${{ stdlib("c") }}
-        - cmake >=3.21
+        - cmake >=3.21,<4
         - ninja
         - pkg-config
         - git
@@ -157,6 +157,7 @@ outputs:
         - python
         - anndata >=0.10.1
         - attrs >=22.2
+        - more-itertools
         - numpy
         - pandas
         - pyarrow
