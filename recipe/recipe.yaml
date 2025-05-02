@@ -11,8 +11,6 @@ source:
   sha256: d6af003b2d6ab7662c6a426c951a714a553297af2d5d0a88b8bf13b24a496711
   patches:
     - include-thread-pool.patch
-    # https://github.com/single-cell-data/TileDB-SOMA/pull/3858
-    - static-deserializer-map.patch
 
 build:
   number: 0
