@@ -13,7 +13,7 @@ source:
     - include-thread-pool.patch
 
 build:
-  number: 0
+  number: 1
   skip: win
 
 outputs:
@@ -173,7 +173,7 @@ outputs:
           pip_check: true
       - requirements:
           run:
-            - pytest
+            - pytest <8.4
             - typeguard
         files:
           source:
