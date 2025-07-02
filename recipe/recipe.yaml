@@ -173,7 +173,7 @@ outputs:
           pip_check: true
       - requirements:
           run:
-            - pytest
+            - pytest <8.4
             - typeguard
         files:
           source:
