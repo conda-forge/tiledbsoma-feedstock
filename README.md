@@ -192,6 +192,5 @@ Feedstock Maintainers
 =====================
 
 * [@jdblischak](https://github.com/jdblischak/)
-* [@johnkerl](https://github.com/johnkerl/)
 * [@jp-dark](https://github.com/jp-dark/)
 
