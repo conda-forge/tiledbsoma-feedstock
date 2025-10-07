@@ -163,8 +163,8 @@ outputs:
         - pyarrow
         - scanpy >=1.9.2
         - scipy
-        - somacore ==1.0.28
-        - typing_extensions
+        - somacore ==1.0.29
+        - typing_extensions >=4.5.0
 
     tests:
       - python:
@@ -173,7 +173,7 @@ outputs:
           pip_check: true
       - requirements:
           run:
-            - pytest <8.4
+            - pytest
             - typeguard
         files:
           source:
