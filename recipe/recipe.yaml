@@ -13,7 +13,7 @@ source:
     - include-thread-pool.patch
 
 build:
-  number: 0
+  number: 1
   skip: win
 
 outputs:
@@ -55,8 +55,8 @@ outputs:
         - pkg-config
       host:
         - tiledb
-        - spdlog >=1.15
-        - fmt >=11.0
+        - spdlog
+        - fmt
       run_exports:
         - ${{ pin_subpackage('libtiledbsoma', exact=True) }}
 
