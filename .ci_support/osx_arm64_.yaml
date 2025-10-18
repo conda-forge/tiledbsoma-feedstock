@@ -32,4 +32,4 @@ spdlog:
 target_platform:
 - osx-arm64
 tiledb:
-- '2.28'
+- '2.29'
